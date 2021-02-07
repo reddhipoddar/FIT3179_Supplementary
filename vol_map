@@ -1,45 +1,115 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 800,
-  "height": 400,
+  "width": 1000,
+  "height": 500,
   "projection": {"type": "equirectangular"},
   "config": {
     "view": {
       "stroke": "transparent"
     }
   },
+  "params": [
+    {
+      "name": "yearSelection",
+      "value": 2016,
+      "bind": {
+        "input": "range",
+        "min": 0,
+        "max": 2016,
+        "step": 1,
+        "name": "Year: "
+      }
+    },
+    {
+      "name": "regionSelection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Africa and Red Sea",
+          "Alaska",
+          "Antarctica",
+          "Atlantic Ocean",
+          "Canada and Western USA",
+          "Hawaii and Pacific Ocean",
+          "Iceland and Arctic Ocean",
+          "Indonesia",
+          "Japan, Taiwan, Marianas",
+          "Kamchatka and Mainland Asia",
+          "Kuril Isalands",
+          "Mediterranean and Western Asia",
+          "Melanesia and Australia",
+          "Mèxico and Central America",
+          "Middle East and Indian Ocean",
+          "New Zealand to Fiji",
+          "Philippines and SE Asia",
+          "South America",
+          "West Indies"
+        ],
+        "labels": [
+          "Show All",
+          "Africa and Red Sea",
+          "Alaska",
+          "Antarctica",
+          "Atlantic Ocean",
+          "Canada and Western USA",
+          "Hawaii and Pacific Ocean",
+          "Iceland and Arctic Ocean",
+          "Indonesia",
+          "Japan, Taiwan, Marianas",
+          "Kamchatka and Mainland Asia",
+          "Kuril Isalands",
+          "Mediterranean and Western Asia",
+          "Melanesia and Australia",
+          "Mexico and Central America",
+          "Middle East and Indian Ocean",
+          "New Zealand to Fiji",
+          "Philippines and South East Asia",
+          "South America",
+          "West Indies"
+        ],
+        "name": "Region Selection: "
+      }
+    }
+  ],
   "layer": [
     {
       "data": {
         "url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179_Supplementary/main/ne_110m.json",
         "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
       },
-      "mark": {"type": "geoshape", "fill": "darkgray","stroke": "lightgray"}
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
     },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179_Supplementary/main/volcano.csv"
       },
+      "transform": [
+        {"filter": "datum.LastKnownEruption <= yearSelection"},
+        {"filter": "regionSelection == null || datum.Region == regionSelection"}
+        ],
+      "mark": "circle",
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
-        "color": {}
-      },
-      "layer": [
-        {
-          "mark": {
-            "type": "circle",
-            "size": 30
+        "size": {"value": 30},
+        "color": {
+          "field": "LastKnownEruption", 
+          "type": "quantitative",
+          "scale": {
+            "scheme": "goldorange"
           },
-          "encoding": {
-            "color": {"field": "Last Known Eruption",
-            "type": "quantitative",
-            "scale": {
-              "scheme": "goldorange"
-            }}
-          }
-        }
-      ]
+          "title": "Last Known Eruption",
+          "legend":{"orient": "top", "offset": 0}
+        },
+        "tooltip": [
+          {"field": "Name", "type": "nominal"},
+          {"field": "Country", "type": "nominal"},
+          {"field": "LastKnownEruption", "type": "quantitative"
+          },
+          {"field": "Elevation(Meters)", "type": "quantitative"}
+        ]
+      }
     }
   ]
 }
