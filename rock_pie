@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple pie chart with labels.",
+  "title": "Dominant Rock Type of Volcanoes",
+  "data": {
+    "url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179_Supplementary/main/volcano.csv"
+  },
+  "encoding": {
+    "theta": {"field": "DominantRockType", "aggregate": "count", "stack": true},
+    "color": {"field": "DominantRockType", "type": "nominal",
+    "scale": {"scheme": "category20"}},
+    "tooltip": [
+    {"field": "DominantRockType", "type": "nominal"},
+    {"field" : "DominantRockType", "aggregate": "count","title": "Count"}]
+  },
+  "layer": [{
+    "mark": {"type": "arc", "outerRadius": 80}
+  }],
+  "view": {"stroke": "transparent"}
+}
