@@ -1,4 +1,4 @@
-Number,Name,Country,Region,Type,Activity Evidence,Last Known Eruption,Latitude,Longitude,Elevation (Meters),Dominant Rock Type,Tectonic Setting
+Number,Name,Country,Region,Type,Activity Evidence,LastKnownEruption,Latitude,Longitude,Elevation(Meters),DominantRockType,TectonicSetting
 305011,Arshan,China,Kamchatka and Mainland Asia,Pyroclastic cone,Eruption Dated,0,47.5,120.7,1677,Basalt / Picro-Basalt,Intraplate / Continental Crust (>25 km)
 231040,"Lunayyir, Harrat",Saudi Arabia,Middle East and Indian Ocean,Volcanic field,Eruption Observed,1000,25.17,37.75,1370,Basalt / Picro-Basalt,Intraplate / Continental Crust (>25 km)
 306040,Halla,South Korea,Kamchatka and Mainland Asia,Shield,Eruption Observed,1007,33.361,126.53,1919,Basalt / Picro-Basalt,Intraplate / Continental Crust (>25 km)
