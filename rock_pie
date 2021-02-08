@@ -1,20 +1,34 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "A simple pie chart with labels.",
-  "title": "Dominant Rock Type of Volcanoes",
-  "data": {
-    "url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179_Supplementary/main/volcano.csv"
-  },
+  "title": "Dominant Rock Type",
+  "data": {"url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179_Supplementary/main/volcano.csv"},
+  "transform": [
+    {
+      "aggregate": [{"op": "count", "field": "Name","as": "num_rocks"}],
+      "groupby": ["DominantRockType"]
+    }
+  ],
   "encoding": {
-    "theta": {"field": "DominantRockType", "aggregate": "count", "stack": true},
+    "theta": {"field": "num_rocks","type": "quantitative", "stack": true},
     "color": {"field": "DominantRockType", "type": "nominal",
-    "scale": {"scheme": "category20"}},
+    "scale": {"scheme": "dark2", "reverse":true},
+    "condition": {"test": "datum.num_rocks < 30", "value": "black"}, "legend": null},
     "tooltip": [
     {"field": "DominantRockType", "type": "nominal"},
-    {"field" : "DominantRockType", "aggregate": "count","title": "Count"}]
+    {"field" : "num_rocks","title": "Count"}]
   },
   "layer": [{
-    "mark": {"type": "arc", "outerRadius": 80}
-  }],
+    "mark": {"type": "arc", "outerRadius": 100}},
+    {
+      "mark": {"type": "text", "radius": 80, "fontSize": 12, "fontWeight": "bold", "dx": 6, "dy": 1},
+      "encoding": {
+    "text": {"field": "DominantRockType","type": "nominal", "condition": {"test": "datum['DominantRockType'] == 'Rhyolite'", "value": "Others"}},
+    "color": {"condition": {"test": "datum['DominantRockType'] == 'Rhyolite'", "value": "white"},
+    "value": "black"},
+    "opacity": {
+      "condition": { "test": "datum['DominantRockType'] == 'Andesite / Basaltic Andesite' || datum['DominantRockType'] == 'Basalt / Picro-Basalt' || datum['DominantRockType'] == 'Dacite' || datum['DominantRockType'] == 'Rhyolite'", "value": 1 },
+ "value": 0
+    }
+  }}],
   "view": {"stroke": "transparent"}
 }
