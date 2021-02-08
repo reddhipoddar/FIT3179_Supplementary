@@ -88,7 +88,6 @@
         {"filter": "datum.LastKnownEruption <= yearSelection"},
         {"filter": "regionSelection == null || datum.Region == regionSelection"}
         ],
-      "mark": "circle",
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
@@ -109,7 +108,33 @@
           },
           {"field": "Elevation(Meters)", "type": "quantitative"}
         ]
-      }
+      },
+      "layer": [
+        {
+          "mark": "circle"
+        },
+        {
+          "mark": {
+            "type": "text",
+            "fontSize": 12,
+            "dy": -15,
+            "dx": 10,
+            "fontWeight": "bold",
+            "fontStyle": "italic"
+          },
+          "encoding": {
+            "text": {"field": "Name", "type": "nominal"
+          },
+          "color": {"value": "black"},
+          "opacity": {
+            "condition": {
+              "test": "datum['Name'] == 'Ojos del Salado, Nevados' || datum['Name'] == 'Pico Fracture Zone' || datum['Name'] == 'Avachinsky' || datum['Name'] == 'Colima' || datum['Name'] == 'Etna' || datum['Name'] == 'Galeras' || datum['Name'] == 'Mauna Loa' || datum['Name'] == 'Merapi' || datum['Name'] == 'Nyiragongo' || datum['Name'] == 'Rainier' || datum['Name'] == 'Unzendake'", "value": 1},
+              "value": 0
+            },
+            "size": {}
+          }
+        }
+      ]
     }
   ]
 }
