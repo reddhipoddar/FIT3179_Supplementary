@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {"url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179_Supplementary/main/volcano.csv"},
+  "title": "Tectonic Settings of Volcanoes",
+  "height": 300,
+  "width": 300,
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "TectonicSetting",
+      "type": "nominal",
+      "axis": null
+    },
+    "y": {
+      "aggregate": "count", 
+      "field": "Name",
+      "axis": null
+      },
+      "color": {
+        "field": "TectonicSetting",
+        "type":"nominal",
+        "legend": null,
+        "scale": {"scheme": "tableau20"}
+      },
+      "tooltip": [
+        {"field": "TectonicSetting", "type": "nominal"},
+        {"aggregate": "count", "type": "quantitative", "title": "Number of volcanoes"}
+      ]
+  },
+  "layer": [
+    {
+  "mark": "bar"
+  },
+  {
+  "mark": {
+      "type": "text",
+      "align": "center",
+      "baseline": "bottom",
+      "fontSize": 15
+    },
+    "encoding": {
+      "text": {"aggregate": "count", "field": "Name", "type": "quantitative"},
+      "color": {}
+  }}
+  ]
+}
