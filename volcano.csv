@@ -275,7 +275,7 @@ Number,Name,Country,Region,Type,ActivityEvidence,LastKnownEruption,Latitude,Long
 290320,Nemo Peak,Russia,Kuril Islands,Caldera,Eruption Observed,1938,49.57,154.808,1018,Andesite / Basaltic Andesite,Subduction Zone / Intermediate Crust (15-25 km)
 263040,Perbakti-Gagak,Indonesia,Indonesia,Stratovolcano,Eruption Observed,1939,-6.75,106.7,1699,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
 272080,Biliran,Philippines,Philippines and SE Asia,Compound,Eruption Observed,1939,11.523,124.535,1301,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
-261250,Besar,Indonesia,Indonesia,Stratovolcano?,Eruption Observed,1940,-4.43,103.67,1899,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
+261250,Besar,Indonesia,Indonesia,Stratovolcano,Eruption Observed,1940,-4.43,103.67,1899,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
 283190,Zaozan,Japan,"Japan, Taiwan, Marianas",Complex,Eruption Observed,1940,38.144,140.44,1841,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
 351030,"Tolima, Nevado del",Colombia,South America,Stratovolcano,Eruption Observed,1943,4.658,-75.33,5215,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
 211020,Vesuvius,Italy,Mediterranean and Western Asia,Stratovolcano,Eruption Observed,1944,40.821,14.426,1281,Phono-tephrite /  Tephri-phonolite,Subduction Zone / Continental Crust (>25 km)
@@ -398,7 +398,7 @@ Number,Name,Country,Region,Type,ActivityEvidence,LastKnownEruption,Latitude,Long
 353080,Marchena,Ecuador,South America,Shield,Eruption Observed,1991,0.33,-90.47,343,Basalt / Picro-Basalt,Rift Zone / Oceanic Crust (< 15 km)
 311300,Bogoslof,United States,Alaska,Submarine,Eruption Observed,1992,53.93,-168.03,150,Trachyandesite / Basaltic Trachyandesite,Subduction Zone / Intermediate Crust (15-25 km)
 311320,Akutan,United States,Alaska,Stratovolcano,Eruption Observed,1992,54.134,-165.986,1303,Basalt / Picro-Basalt,Subduction Zone / Intermediate Crust (15-25 km)
-311340,Westdahl,United States,Alaska,Stratovolcano?,Eruption Observed,1992,54.518,-164.65,1654,Basalt / Picro-Basalt,Subduction Zone / Continental Crust (>25 km)
+311340,Westdahl,United States,Alaska,Stratovolcano,Eruption Observed,1992,54.518,-164.65,1654,Basalt / Picro-Basalt,Subduction Zone / Continental Crust (>25 km)
 313040,Spurr,United States,Alaska,Stratovolcano,Eruption Observed,1992,61.299,-152.251,3374,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
 251050,Long Island,Papua New Guinea,Melanesia and Australia,Complex,Eruption Observed,1993,-5.358,147.12,1280,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
 264220,Iliboleng,Indonesia,Indonesia,Stratovolcano,Eruption Observed,1993,-8.342,123.258,1659,Basalt / Picro-Basalt,Subduction Zone / Crust Thickness Unknown
@@ -535,7 +535,7 @@ Number,Name,Country,Region,Type,ActivityEvidence,LastKnownEruption,Latitude,Long
 263090,Tangkubanparahu,Indonesia,Indonesia,Stratovolcano,Eruption Observed,2013,-6.77,107.6,2084,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
 264250,Iliwerung,Indonesia,Indonesia,Complex,Eruption Observed,2013,-8.53,123.57,1018,Basalt / Picro-Basalt,Subduction Zone / Crust Thickness Unknown
 282060,Kikai,Japan,"Japan, Taiwan, Marianas",Caldera,Eruption Observed,2013,30.789,130.308,704,Rhyolite,Subduction Zone / Oceanic Crust (< 15 km)
-290070,Etorofu-Yakeyama [Grozny Group],Japan - administered by Russia,Kuril Islands,Complex(es),Eruption Observed,2013,45.012,147.871,1158,Andesite / Basaltic Andesite,Subduction Zone / Intermediate Crust (15-25 km)
+290070,Etorofu-Yakeyama [Grozny Group],Japan - administered by Russia,Kuril Islands,Complex,Eruption Observed,2013,45.012,147.871,1158,Andesite / Basaltic Andesite,Subduction Zone / Intermediate Crust (15-25 km)
 300230,Kizimen,Russia,Kamchatka and Mainland Asia,Stratovolcano,Eruption Observed,2013,55.131,160.32,2334,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
 300240,Tolbachik,Russia,Kamchatka and Mainland Asia,Shield,Eruption Observed,2013,55.832,160.326,3611,Basalt / Picro-Basalt,Subduction Zone / Continental Crust (>25 km)
 312070,Veniaminof,United States,Alaska,Stratovolcano,Eruption Observed,2013,56.17,-159.38,2507,Andesite / Basaltic Andesite,Subduction Zone / Continental Crust (>25 km)
