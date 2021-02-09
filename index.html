@@ -14,18 +14,18 @@
       margin:0;
     }
     body{
-       background-color: white;
+       background-color: lightgrey;
      }
     .page{
        width: 1100px;    
-       background-color: white;   
+       background-color: #333333;   
        margin: auto;
        padding: 10px;
        padding-top: 25px;
        border: 2px solid black;
     }
     .description-left{
-      padding-right: 20px;
+      padding-right: 0px;
     }
     .description-right{
       padding-left: 0px;
@@ -48,9 +48,9 @@
   <div class="page"><!--start page-->
     <div class="pure-g">
       <div class="pure-u-1-1">
-  <h1 style="margin:10px;color:brown;background-color:white;text-align:center;font-size: 300%;font-family:Times New Roman">Active Volcanoes Since Common Era</h1>
-  <p style="margin:10px;color:brown;background-color:white;font-family:Times New Roman; text-align:right;font-size:150%;">-A visualisation by Reddhi Poddar</p>
-  <p style="margin:35px;color:brown;background-color:white;font-family:Arial;font-size:130%;">A volcano is a crack in the crust of a planet which allows hot lava, volcanic ash and gases to escape from the planet’s magma. These cracks are mostly found where tectonic plates converge or diverge.The word volcano is derived from the name of <i>'Vulcano'</i>, a volcanic island in the Aeolian Islands of Italy whose name in turn comes from <i>Vulcan</i>, the god of fire in Roman mythology. Volcanoes have been erupting on Earth since almost four and a half billion years.</p>
+  <h1 style="margin:10px;color:lightgrey;background-color:#333333;text-align:center;font-size: 300%;font-family:Times New Roman">Active Volcanoes Since Common Era</h1>
+  <p style="margin:10px;color:lightgrey;background-color:#333333;font-family:Times New Roman; text-align:right;font-size:150%;">-A visualisation by Reddhi Poddar</p>
+  <p style="margin:35px;color:lightgrey;background-color:#333333;font-family:Arial;font-size:130%;">A volcano is a crack in the crust of a planet which allows hot lava, volcanic ash and gases to escape from the planet’s magma. These cracks are mostly found where tectonic plates converge or diverge.The word volcano is derived from the name of <i>'Vulcano'</i>, a volcanic island in the Aeolian Islands of Italy whose name in turn comes from <i>Vulcan</i>, the god of fire in Roman mythology. Volcanoes have been erupting on Earth since almost four and a half billion years.</p>
       </div>
     </div>
     <div class="pure-g"> <!-- embed map -->
@@ -60,24 +60,25 @@
     </div>
     
     <div class="pure-g"> <!-- second block of text -->
-      <div class="pure-u-1-3">
+      <div class="pure-u-1-2">
  <div class="description description-left">
- <p style="margin:35px;font-family:Arial;font-size:130%;color:brown;background-color:white;">The Earth's lithosphere is divided into 17 major and minor tectonic plates. These plates are always in slow motion due to convection of <a href="https://whc.unesco.org/en/criteria/">here</a>.</p>
+ <p style="margin:35px;font-family:Arial;font-size:130%;color:lightgrey;background-color:#333333;">The Earth's lithosphere is divided into 17 major and minor tectonic plates containing continental crusts and ocean crusts. These plates are always in slow motion due to the convection currents of the upper mantle. These movements cause the tectonic plates to either converge or diverge from each other resulting in volcanic eruptions. Some volcanoes are also found away from the plate boundaries. Different regions of the Earth have different types of volcanoes based on their way of eruption, materials erupted, etc.</p>
     </div>
+        <div id="bar2" class="vis-container"></div>
     </div>
-      <div class="pure-u-2-3">
+      <div class="pure-u-2-2">
         <div id="bar1" class="vis-container"></div>
       </div>
     </div>
     
-<div class="pure-g">
+<div class="pure-g"> <!--third block-->
   <div class="pure-u-1-3">
-    <div id="bar2" class="vis-container"></div>
+    <div class="description description-left">
+      <p style="font-family:Arial;font-size:130%;margin:35px;color:lightgrey;background-color:#333333;">All around the Earth, there are  </p>
+    </div>
   </div>
   <div class="pure-u-2-3">
- <div class="description description-right">
-   <p style="font-family:Times New Roman;font-size:130%;margin:35px;color:chocolate;background-color:floralwhite;">A site may be added to the list of World Heritage in Danger if conditions threaten the characteristics for which the landmark or area was inscribed on the World Heritage List. These problems may involve armed conflict and war, natural disasters, pollution, poaching, or uncontrolled urbanisation or human development. This danger list is intended to increase international awareness of the threats and to encourage counteractive measures.This list is reviewed annually and sites are added or removed as they see fit. The graph along right side shows the number of sites that are in danger currently.
-    </div>
+    <div id="pie" class="vis-container"></div>
   </div>
   </div>
     
@@ -85,21 +86,27 @@
 
 <script type="text/javascript">
   
-  var vis1 = "WHS_Map";
+  var vis1 = "vol_map";
   
   vegaEmbed('#map', vis1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-  var vis2 = "category_bar";
+  var vis2 = "type_bar";
   
   vegaEmbed('#bar1', vis2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-  var vis3 = "danger_bar";
+  var vis3 = "tectonic_bar";
   
   vegaEmbed('#bar2', vis3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var vis4 = "rock_pie";
+  
+  vegaEmbed('#pie', vis3).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
