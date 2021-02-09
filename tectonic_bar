@@ -23,7 +23,6 @@
       "color": {
         "field": "TectonicSetting",
         "type":"nominal",
-        "legend": null,
         "scale": {"scheme": "tableau20"}
       },
       "tooltip": [
