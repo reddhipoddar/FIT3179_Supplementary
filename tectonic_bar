@@ -3,7 +3,9 @@
   "data": {"url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179_Supplementary/main/volcano.csv"},
   "title": {
     "text": "Tectonic Settings of Volcanoes",
-    "color": "lightgray"},
+    "color": "lightgray",
+    "fontSize": 16,
+    "fontWeight":"bold"},
   "height": 300,
   "width": 300,
   "config": {
