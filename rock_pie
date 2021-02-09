@@ -1,6 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "title": "Dominant Rock Type",
+  "title": {
+    "text": "Dominant Rock Type",
+    "color": "lightgrey"},
+  "config": {
+    "background": "#333333"
+  },
   "data": {"url": "https://raw.githubusercontent.com/reddhipoddar/FIT3179_Supplementary/main/volcano.csv"},
   "transform": [
     {
@@ -11,20 +16,38 @@
   "encoding": {
     "theta": {"field": "num_rocks","type": "quantitative", "stack": true},
     "color": {"field": "DominantRockType", "type": "nominal",
-    "scale": {"scheme": "dark2", "reverse":true},
-    "condition": {"test": "datum.num_rocks < 30", "value": "black"}, "legend": null},
+    "scale": {
+      "domain": [
+        "Andesite / Basaltic Andesite",
+        "Basalt / Picro-Basalt",
+        "Dacite",
+        "Foldite",
+        "No Data",
+        "Phono-tephrite / Tephri-phonolite",
+        "Phonolite",
+        "Rhyolite",
+        "Trachyandesite / Basaltic Trachyandesite",
+        "Trachybasite / Tephrite Basalnite",
+        "Trachyte / Trachydacite"
+      ],
+      "range": [
+        "#c1402e",
+        "#eb952e",
+        "#D00000"
+      ]},
+    "condition": {"test": "datum.num_rocks < 30", "value": "lightgrey"}, "legend": null},
     "tooltip": [
     {"field": "DominantRockType", "type": "nominal"},
     {"field" : "num_rocks","title": "Count"}]
   },
   "layer": [{
-    "mark": {"type": "arc", "outerRadius": 100}},
+    "mark": {"type": "arc", "outerRadius": 100, "stroke": null}},
     {
       "mark": {"type": "text", "radius": 80, "fontSize": 12, "fontWeight": "bold", "dx": 6, "dy": 1},
       "encoding": {
     "text": {"field": "DominantRockType","type": "nominal", "condition": {"test": "datum['DominantRockType'] == 'Rhyolite'", "value": "Others"}},
-    "color": {"condition": {"test": "datum['DominantRockType'] == 'Rhyolite'", "value": "white"},
-    "value": "black"},
+    "color": {"condition": {"test": "datum['DominantRockType'] == 'Rhyolite'", "value": "Black"},
+    "value": "white"},
     "opacity": {
       "condition": { "test": "datum['DominantRockType'] == 'Andesite / Basaltic Andesite' || datum['DominantRockType'] == 'Basalt / Picro-Basalt' || datum['DominantRockType'] == 'Dacite' || datum['DominantRockType'] == 'Rhyolite'", "value": 1 },
  "value": 0
