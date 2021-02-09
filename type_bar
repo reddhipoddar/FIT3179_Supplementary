@@ -7,16 +7,16 @@
     "background": "transparent",
     "padding": {"left": 0, "top": 0, "right": 0, "bottom": 0}
   },
-  "height": 500,
-  "width": 300,
+  "height": 200,
+  "width": 700,
   "mark": "bar",
   "encoding": {
-    "x": {"aggregate": "count", "field": "Name", "title": null, "axis": null},
-    "y": {"field": "Region", "title": null, "sort": {"field": "Region"}},
+    "x": {"field": "Region", "title": null, "sort": {"field": "Region"}},
+    "y": {"aggregate": "count", "field": "Name", "title": null, "axis": null},
     "color": {"field": "Type", "scale": {"scheme": "tableau20"}},
     "tooltip": [
      {"field": "Type", "type": "nominal"},
-     {"aggregate": "count", "type": "quantitative"}
+     {"aggregate": "count", "type": "quantitative", "title": "Number of volcanoes"}
     ]
   }
 }
