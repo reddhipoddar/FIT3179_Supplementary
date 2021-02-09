@@ -2,16 +2,12 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "width": 1000,
   "height": 500,
-  "projection": {"type": "equirectangular","rotate": [-145,0,0]},
-  "config": {
-    "view": {
-      "stroke": "transparent"
-    },
-    "background": "#333333"
-  },
+  "projection": {"type": "equirectangular", "rotate": [-145, 0, 0]},
+  "config": {"view": {"stroke": "transparent"}, "background": "#333333"},
   "params": [
     {
       "name": "yearSelection",
+      "titleColor": "Red",
       "value": 2016,
       "bind": {
         "input": "range",
@@ -88,32 +84,32 @@
       "transform": [
         {"filter": "datum.LastKnownEruption <= yearSelection"},
         {"filter": "regionSelection == null || datum.Region == regionSelection"}
-        ],
+      ],
       "encoding": {
         "longitude": {"field": "Longitude", "type": "quantitative"},
         "latitude": {"field": "Latitude", "type": "quantitative"},
         "size": {"value": 90},
         "color": {
-          "field": "Elevation(Meters)", 
+          "field": "Elevation(Meters)",
           "type": "quantitative",
-          "scale": {
-            "scheme": "redblue", "reverse": true
-          },
+          "scale": {"scheme": "redblue", "reverse": true},
           "title": "Elevation (Meters)",
-          "legend":{"orient": "top", "offset": 0, "titleColor": "white", "labelColor": "white"}
+          "legend": {
+            "orient": "top",
+            "offset": 0,
+            "titleColor": "white",
+            "labelColor": "white"
+          }
         },
         "tooltip": [
           {"field": "Name", "type": "nominal"},
           {"field": "Country", "type": "nominal"},
-          {"field": "LastKnownEruption", "type": "quantitative"
-          },
+          {"field": "LastKnownEruption", "type": "quantitative"},
           {"field": "Elevation(Meters)", "type": "quantitative"}
         ]
       },
       "layer": [
-        {
-          "mark": "circle"
-        },
+        {"mark": "circle"},
         {
           "mark": {
             "type": "text",
@@ -124,12 +120,13 @@
             "fontStyle": "italic"
           },
           "encoding": {
-            "text": {"field": "Name", "type": "nominal"
-          },
-          "color": {"value": "white"},
-          "opacity": {
-            "condition": {
-              "test": "datum['Name'] == 'Ojos del Salado, Nevados' || datum['Name'] == 'Pico Fracture Zone' || datum['Name'] == 'Avachinsky' || datum['Name'] == 'Colima' || datum['Name'] == 'Etna' || datum['Name'] == 'Galeras' || datum['Name'] == 'Mauna Loa' || datum['Name'] == 'Merapi' || datum['Name'] == 'Nyiragongo' || datum['Name'] == 'Rainier'", "value": 1},
+            "text": {"field": "Name", "type": "nominal"},
+            "color": {"value": "white"},
+            "opacity": {
+              "condition": {
+                "test": "datum['Name'] == 'Ojos del Salado, Nevados' || datum['Name'] == 'Pico Fracture Zone' || datum['Name'] == 'Avachinsky' || datum['Name'] == 'Colima' || datum['Name'] == 'Etna' || datum['Name'] == 'Galeras' || datum['Name'] == 'Mauna Loa' || datum['Name'] == 'Merapi' || datum['Name'] == 'Nyiragongo' || datum['Name'] == 'Rainier' || datum['Name'] == 'Arshan'",
+                "value": 1
+              },
               "value": 0
             },
             "size": {}
